@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartfulness Retreat Center - Monroe | Silent Retreat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-deep-forest: #1a2f23;
+            --color-sage: #4a6356;
+            --color-moss: #7a9b8a;
+            --color-mist: #c5d4cc;
+            --color-cream: #f7f5f0;
+            --color-warm-white: #fdfcfa;
+            --color-gold: #c4a35a;
+            --color-gold-light: #d4b86a;
+            --color-earth: #8b7355;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Mulish', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-warm-white);
+            color: var(--color-deep-forest);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(26, 47, 35, 0.95), transparent);
+            transition: background 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(26, 47, 35, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--color-cream);
+            letter-spacing: 0.05em;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-mist);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(74, 99, 86, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(139, 115, 85, 0.2) 0%, transparent 50%),
+                linear-gradient(160deg, var(--color-deep-forest) 0%, #243d2e 50%, #2d4a38 100%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60M0 30L60 30M15 15L45 45M45 15L15 45' stroke='%23c4a35a' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 300;
+            color: var(--color-cream);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-style: italic;
+            color: var(--color-mist);
+            font-size: 0.5em;
+            margin-top: 0.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--color-mist);
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            line-height: 1.9;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--color-gold);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--color-gold);
+            color: var(--color-deep-forest);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-cream);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-gold);
+            color: var(--color-deep-forest);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-mist);
+            opacity: 0.6;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 400;
+            color: var(--color-deep-forest);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--color-sage);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-cream);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            position: relative;
+            height: 550px;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--color-moss) 0%, var(--color-sage) 100%);
+            border-radius: 2px;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--color-gold);
+            z-index: -1;
+        }
+
+        .about-content h3 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--color-deep-forest);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--color-sage);
+            font-size: 1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: var(--color-gold);
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: var(--color-deep-forest);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--color-deep-forest);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-display);
+            font-size: 400px;
+            color: var(--color-sage);
+            opacity: 0.08;
+            line-height: 1;
+        }
+
+        .quote-content {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quote-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--color-cream);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .quote-author {
+            color: var(--color-gold);
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            background: var(--color-warm-white);
+        }
+
+        .schedule-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .schedule-intro {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .schedule-card {
+            background: var(--color-cream);
+            padding: 2.5rem;
+            text-align: center;
+            border-top: 3px solid var(--color-gold);
+        }
+
+        .schedule-card-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1.5rem;
+            color: var(--color-sage);
+        }
+
+        .schedule-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            color: var(--color-deep-forest);
+        }
+
+        .schedule-card p {
+            font-size: 0.95rem;
+            color: var(--color-sage);
+        }
+
+        .daily-schedule {
+            background: var(--color-cream);
+            padding: 4rem;
+        }
+
+        .schedule-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--color-deep-forest);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 4rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--color-mist);
+        }
+
+        .schedule-time {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-gold);
+            min-width: 90px;
+            letter-spacing: 0.05em;
+        }
+
+        .schedule-activity {
+            color: var(--color-deep-forest);
+            font-size: 0.95rem;
+        }
+
+        /* Guidelines Section */
+        .guidelines {
+            background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .guideline-card {
+            background: var(--color-warm-white);
+            padding: 2.5rem;
+            border-left: 3px solid var(--color-moss);
+            box-shadow: 0 4px 20px rgba(26, 47, 35, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .guideline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(26, 47, 35, 0.1);
+        }
+
+        .guideline-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--color-mist);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .guideline-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--color-deep-forest);
+            margin-bottom: 1rem;
+        }
+
+        .guideline-card p {
+            color: var(--color-sage);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: var(--color-warm-white);
+            position: relative;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .philosophy-card {
+            background: var(--color-cream);
+            padding: 2.5rem;
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-moss));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(26, 47, 35, 0.12);
+        }
+
+        .philosophy-card:hover::before {
+            opacity: 1;
+        }
+
+        .philosophy-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+            color: var(--color-gold);
+        }
+
+        .philosophy-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .philosophy-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--color-deep-forest);
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-card p {
+            color: var(--color-sage);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Quotes Carousel */
+        .wisdom {
+            background: var(--color-sage);
+            position: relative;
+        }
+
+        .wisdom .section-label,
+        .wisdom .section-title,
+        .wisdom .section-subtitle {
+            color: var(--color-cream);
+        }
+
+        .wisdom .section-label {
+            color: var(--color-gold);
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wisdom-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .wisdom-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .wisdom-card blockquote {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--color-cream);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .wisdom-card blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--color-gold);
+            opacity: 0.5;
+            line-height: 0;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .wisdom-card cite {
+            font-style: normal;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+        }
+
+        /* Requirements Section */
+        .requirements {
+            background: var(--color-warm-white);
+        }
+
+        .requirements-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .requirements-list {
+            list-style: none;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--color-mist);
+        }
+
+        .requirements-list svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .req-content h5 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--color-deep-forest);
+            margin-bottom: 0.35rem;
+        }
+
+        .req-content p {
+            font-size: 0.9rem;
+            color: var(--color-sage);
+        }
+
+        /* Registration Section */
+        .registration {
+            background: var(--color-deep-forest);
+            text-align: center;
+        }
+
+        .registration .section-label {
+            color: var(--color-gold);
+        }
+
+        .registration .section-title {
+            color: var(--color-cream);
+        }
+
+        .registration .section-subtitle {
+            color: var(--color-mist);
+        }
+
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-mist);
+            margin-bottom: 0.75rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-sage);
+            color: var(--color-cream);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--color-moss);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--color-deep-forest);
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--color-moss);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(196, 163, 90, 0.1);
+            border-left: 2px solid var(--color-gold);
+        }
+
+        .form-submit {
+            text-align: center;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            padding: 1.25rem 2.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1a13;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-cream);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--color-gold);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--color-moss);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-contact {
+            color: var(--color-moss);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact a {
+            color: var(--color-gold);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(122, 155, 138, 0.2);
+            color: var(--color-sage);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            section {
+                padding: 5rem 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .philosophy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .schedule-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quotes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .requirements-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .daily-schedule {
+                padding: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lotus decoration */
+        .lotus-decoration {
+            width: 60px;
+            height: 60px;
+            margin: 2rem auto;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Heartfulness <span>Monroe</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+            <li><a href="#wisdom">Wisdom</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Silent Retreat Experience</p>
+            <h1>Heartfulness Retreat Center
+                <span>Monroe</span>
+            </h1>
+            <p class="hero-description">
+                A sacred space for rest, reflection, and spiritual growth. Leave the world behind 
+                and rediscover your connection to what matters most through contemplative practice 
+                and the timeless wisdom of Sahaj Marg philosophy.
+            </p>
+            <div class="hero-cta">
+                <a href="#register" class="btn btn-primary">Begin Your Journey</a>
+                <a href="#schedule" class="btn btn-secondary">View Schedule</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="about-image-main"></div>
+            </div>
+            <div class="about-content fade-in">
+                <h3>Find Your Inner Sanctuary</h3>
+                <p>
+                    Monroe Retreat Center welcomes all members of the Heartfulness community seeking 
+                    time apart to find, deepen, or refresh their spiritual connection. We are deeply 
+                    grateful to offer this beautiful space for contemplation and growth.
+                </p>
+                <p>
+                    Our facilitated retreats center around contemplative practice, Ignatian Spirituality, 
+                    and discovering our true nature within. Each retreat is carefully curated with themes 
+                    and curriculum rooted in Sahaj Marg philosophy and practices.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        <span class="feature-text">4-Day Immersion</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <span class="feature-text">Guided Practice</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        <span class="feature-text">Library Access</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                        <span class="feature-text">Peaceful Lodging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-content fade-in">
+            <p class="quote-text">
+                "It is like comparing the water surface of a calm pond, where even a small leaf 
+                will create ripples, with the depth of an enormous pond."
+            </p>
+            <p class="quote-author">— Kamlesh D. Patel (Daaji), on the difference between superficial and deep stillness</p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+        <div class="section-header">
+            <p class="section-label">The Heartfulness Approach</p>
+            <h2 class="section-title">The Essence of Silent Retreat</h2>
+            <p class="section-subtitle">
+                Heartfulness guides view silent retreats as a way to cultivate inner depth and stillness, 
+                moving beyond superficial calm to achieve a profound peace.
+            </p>
+        </div>
+
+        <div class="philosophy-grid">
+            <div class="philosophy-card fade-in">
+                <div class="philosophy-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <h4>Developing Inner Depth</h4>
+                <p>
+                    A silent retreat isn't just about stopping external activity; it's about creating an 
+                    internal depth that is resilient to life's disturbances. Superficial calmness can be 
+                    easily disturbed, but a deep, steady stillness allows you to remain centered even when 
+                    faced with challenges.
+                </p>
+            </div>
+
+            <div class="philosophy-card fade-in">
+                <div class="philosophy-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h4>Connecting with Your True Nature</h4>
+                <p>
+                    Silence is seen as a way to strip away the noise of conditioning and allow your true, 
+                    inner self to emerge. It's a time for self-introspection, where you can gain a deeper 
+                    understanding of yourself and your purpose.
+                </p>
+            </div>
+
+            <div class="philosophy-card fade-in">
+                <div class="philosophy-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h4>Regulating the Mind</h4>
+                <p>
+                    The goal of regular practice, including retreat, is to make the mind more disciplined 
+                    and regulated. This allows you to respond to situations thoughtfully rather than react 
+                    impulsively, bringing grace to all of life's encounters.
+                </p>
+            </div>
+
+            <div class="philosophy-card fade-in">
+                <div class="philosophy-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </div>
+                <h4>Finding Inner Stillness</h4>
+                <p>
+                    Retreats provide an environment to tune into the stillness of the heart, which is a 
+                    state of being rather than just an absence of thought. This stillness is the foundation 
+                    for finding contentment and meaning in every moment.
+                </p>
+            </div>
+
+            <div class="philosophy-card fade-in">
+                <div class="philosophy-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                </div>
+                <h4>Spiritual Growth</h4>
+                <p>
+                    The intense focus and lack of distractions in a retreat setting facilitate spiritual 
+                    progress. This involves simplifying life, becoming more self-aware, and allowing change 
+                    to happen organically from within.
+                </p>
+            </div>
+
+            <div class="philosophy-card fade-in">
+                <div class="philosophy-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h4>Accessing Innate Wisdom</h4>
+                <p>
+                    Silencing the mind allows one to access innate wisdom that lies beyond the surface 
+                    thoughts. This deep, meditative state is key to spiritual growth, self-realization, 
+                    and handling life's challenges with equanimity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule" id="schedule">
+        <div class="schedule-container">
+            <div class="section-header">
+                <p class="section-label">Retreat Program</p>
+                <h2 class="section-title">Your Journey Through Stillness</h2>
+                <p class="section-subtitle">
+                    A carefully structured program designed to guide you inward, 
+                    balancing meditation, reflection, and gentle activity.
+                </p>
+            </div>
+
+            <div class="schedule-intro fade-in">
+                <div class="schedule-card">
+                    <svg class="schedule-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <h4>4 Days</h4>
+                    <p>Thursday check-in through Sunday departure</p>
+                </div>
+                <div class="schedule-card">
+                    <svg class="schedule-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <h4>Open Participation</h4>
+                    <p>For abhyasis with 2+ years of practice</p>
+                </div>
+                <div class="schedule-card">
+                    <svg class="schedule-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                        <line x1="9" y1="9" x2="9.01" y2="9"/>
+                        <line x1="15" y1="9" x2="15.01" y2="9"/>
+                    </svg>
+                    <h4>Alternating Batches</h4>
+                    <p>Sisters and brothers retreat separately</p>
+                </div>
+            </div>
+
+            <div class="daily-schedule fade-in">
+                <h3 class="schedule-title">Daily Schedule</h3>
+                <div class="schedule-grid">
+                    <div class="schedule-item">
+                        <span class="schedule-time">5:00 AM</span>
+                        <span class="schedule-activity">Self Wake-up</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">6:00 AM</span>
+                        <span class="schedule-activity">Self Morning Meditation</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">7:00 AM</span>
+                        <span class="schedule-activity">Yoga or Physical Exercise</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">8:00 AM</span>
+                        <span class="schedule-activity">Breakfast & Cleanup</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">9:00 AM</span>
+                        <span class="schedule-activity">Group Meditation</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">10:00 AM</span>
+                        <span class="schedule-activity">Walking, Diary Writing & Contemplation</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">11:30 AM</span>
+                        <span class="schedule-activity">Lunch Preparation & Cleanup</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">1:00 PM</span>
+                        <span class="schedule-activity">Brief Rest</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">2:30 PM</span>
+                        <span class="schedule-activity">Practice Learning & Reading</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">3:30 PM</span>
+                        <span class="schedule-activity">Individual Sitting (by request)</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">4:00 PM</span>
+                        <span class="schedule-activity">Tea & Quiet Time</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">6:00 PM</span>
+                        <span class="schedule-activity">Dinner Preparation & Cleanup</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">8:30 PM</span>
+                        <span class="schedule-activity">Individual Cleaning Practice</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">9:00 PM</span>
+                        <span class="schedule-activity">Universal Prayer</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">10:30 PM</span>
+                        <span class="schedule-activity">Lights Out</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guidelines Section -->
+    <section class="guidelines" id="guidelines">
+        <div class="section-header">
+            <p class="section-label">Sacred Guidelines</p>
+            <h2 class="section-title">Preparing for Your Retreat</h2>
+            <p class="section-subtitle">
+                Guidelines designed to support your journey inward and create 
+                an atmosphere of contemplation and reflection.
+            </p>
+        </div>
+
+        <div class="guidelines-grid">
+            <div class="guideline-card fade-in">
+                <span class="guideline-number">01</span>
+                <h4>Digital Disconnection</h4>
+                <p>
+                    Leave the world behind—cell phones, internet, and digital distractions 
+                    should not be part of your retreat experience. The resident preceptor 
+                    will handle emergency communications.
+                </p>
+            </div>
+            <div class="guideline-card fade-in">
+                <span class="guideline-number">02</span>
+                <h4>Contemplative Focus</h4>
+                <p>
+                    This is truly a time for introspection and diving within. Participants 
+                    engage only in meal preparation and maintaining their quarters, 
+                    preserving energy for inner work.
+                </p>
+            </div>
+            <div class="guideline-card fade-in">
+                <span class="guideline-number">03</span>
+                <h4>Diary Practice</h4>
+                <p>
+                    Maintain a personal and confidential record of your spiritual development. 
+                    Be especially alert to changes of state throughout the day, noting them 
+                    in your journal.
+                </p>
+            </div>
+            <div class="guideline-card fade-in">
+                <span class="guideline-number">04</span>
+                <h4>Physical Movement</h4>
+                <p>
+                    Master encourages each participant to include periods of physical exercise. 
+                    Brief walks are helpful in allowing one to sit more frequently in meditation 
+                    throughout the day.
+                </p>
+            </div>
+            <div class="guideline-card fade-in">
+                <span class="guideline-number">05</span>
+                <h4>Project the Master</h4>
+                <p>
+                    All at the retreat center should try their best to project Master 
+                    in everything they do—in interactions with others, in preparing meals, 
+                    and in every moment of the day.
+                </p>
+            </div>
+            <div class="guideline-card fade-in">
+                <span class="guideline-number">06</span>
+                <h4>Purity of Practice</h4>
+                <p>
+                    Focus on developing your practice and gaining a deeper understanding 
+                    of its meaning. Consider carefully which aspects of practice you wish 
+                    to concentrate on during your retreat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wisdom Section -->
+    <section class="wisdom" id="wisdom">
+        <div class="section-header">
+            <p class="section-label">Words of Wisdom</p>
+            <h2 class="section-title">Guidance from Our Masters</h2>
+            <p class="section-subtitle">
+                Timeless wisdom on silence, meditation, and the inner journey from Heartfulness guides.
+            </p>
+        </div>
+
+        <div class="quotes-grid">
+            <div class="wisdom-card fade-in">
+                <blockquote>
+                    "The purpose of meditation is to regulate the mind to such stillness that even 
+                    during the most awful situations in life, we are able to pause, analyse the 
+                    situation and take action accordingly."
+                </blockquote>
+                <cite>— Daaji (Kamlesh D. Patel)</cite>
+            </div>
+            <div class="wisdom-card fade-in">
+                <blockquote>
+                    "Tune yourself to the stillness of the heart."
+                </blockquote>
+                <cite>— Daaji (Kamlesh D. Patel)</cite>
+            </div>
+            <div class="wisdom-card fade-in">
+                <blockquote>
+                    "Your mind will answer most questions if you learn to relax and wait for the answer."
+                </blockquote>
+                <cite>— Heartfulness Guide</cite>
+            </div>
+            <div class="wisdom-card fade-in">
+                <blockquote>
+                    "Realization, in its fullest meaning, is not merely knowing something, 
+                    but making it real in oneself."
+                </blockquote>
+                <cite>— Heartfulness Philosophy</cite>
+            </div>
+            <div class="wisdom-card fade-in">
+                <blockquote>
+                    "Change is absolutely necessary for spiritual growth."
+                </blockquote>
+                <cite>— Chariji (Parthasarathi Rajagopalachari)</cite>
+            </div>
+            <div class="wisdom-card fade-in">
+                <blockquote>
+                    "The happiest man is he who is happy under all circumstances."
+                </blockquote>
+                <cite>— Babuji (Ram Chandra)</cite>
+            </div>
+        </div>
+
+        <svg class="lotus-decoration" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+            <path d="M50 80 C50 60, 30 50, 20 30 C35 45, 50 40, 50 20 C50 40, 65 45, 80 30 C70 50, 50 60, 50 80" fill="rgba(196,163,90,0.3)" stroke="var(--color-gold)"/>
+            <ellipse cx="50" cy="85" rx="15" ry="5" fill="none" stroke="var(--color-gold)"/>
+        </svg>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements">
+        <div class="section-header">
+            <p class="section-label">Participation</p>
+            <h2 class="section-title">Requirements & Recommendations</h2>
+            <p class="section-subtitle">
+                Please review the following before submitting your application.
+            </p>
+        </div>
+
+        <div class="requirements-container">
+            <ul class="requirements-list fade-in">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Practice Duration</h5>
+                        <p>Open to abhyasis who have been in practice for at least two years regularly.</p>
+                    </div>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Required Confirmations</h5>
+                        <p>Recommendation from both your Prefect and Zonal Coordinator (ZA).</p>
+                    </div>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Practice Focus Statement</h5>
+                        <p>Include a brief paragraph describing the aspects of practice you wish to focus on.</p>
+                    </div>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Full Participation</h5>
+                        <p>Participants are expected to remain at the center for the entire scheduled duration.</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="requirements-list fade-in">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Satsangh Options</h5>
+                        <p>Satsanghs offered Saturday 9 AM, Sunday 9 AM & 11 AM. Participation is optional.</p>
+                    </div>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Individual Sittings</h5>
+                        <p>Available from the resident prefect upon request during scheduled times.</p>
+                    </div>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Flexible Focus</h5>
+                        <p>Support available if you wish to change your practice focus after arrival.</p>
+                    </div>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <div class="req-content">
+                        <h5>Library & Resources</h5>
+                        <p>Mission literature, Master's videos, and relevant materials available for reading.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration" id="register">
+        <div class="section-header">
+            <p class="section-label">Begin Your Journey</p>
+            <h2 class="section-title">Register for Retreat</h2>
+            <p class="section-subtitle">
+                Take the first step toward deeper practice. Complete the form below 
+                to submit your retreat application.
+            </p>
+        </div>
+
+        <form class="registration-form fade-in" id="retreatForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="practiceYears">Years in Practice *</label>
+                    <select id="practiceYears" name="practiceYears" required>
+                        <option value="">Select duration</option>
+                        <option value="2-3">2-3 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="retreatDate">Preferred Retreat Date *</label>
+                    <input type="date" id="retreatDate" name="retreatDate" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="prefect">Prefect Name *</label>
+                    <input type="text" id="prefect" name="prefect" required placeholder="Your prefect's name">
+                </div>
+                <div class="form-group">
+                    <label for="prefectEmail">Prefect Email *</label>
+                    <input type="email" id="prefectEmail" name="prefectEmail" required placeholder="prefect@example.com">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="coordinator">Zonal Coordinator Name *</label>
+                    <input type="text" id="coordinator" name="coordinator" required placeholder="ZA's name">
+                </div>
+                <div class="form-group">
+                    <label for="coordinatorEmail">Coordinator Email *</label>
+                    <input type="email" id="coordinatorEmail" name="coordinatorEmail" required placeholder="za@example.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusAreas">Practice Focus Areas *</label>
+                <textarea id="focusAreas" name="focusAreas" required 
+                    placeholder="Please describe the aspects of your practice you wish to focus on during this retreat. What draws you to this experience? What do you hope to deepen or explore?"></textarea>
+            </div>
+
+            <div class="form-note">
+                <strong>Note:</strong> Your application will be reviewed and confirmation emails will be sent 
+                to your Prefect and Zonal Coordinator for recommendation. You will receive a confirmation 
+                once all approvals are received.
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Heartfulness <span>Monroe</span></div>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#guidelines">Guidelines</a>
+            <a href="#wisdom">Wisdom</a>
+            <a href="#register">Register</a>
+            <a href="https://heartfulness.org" target="_blank">Heartfulness.org</a>
+        </div>
+        <div class="footer-contact">
+            For inquiries, please contact us at <a href="mailto:retreat@heartfulnessmonroe.org">retreat@heartfulnessmonroe.org</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Heartfulness Retreat Center - Monroe. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-style: italic; opacity: 0.7;">
+                "In the stillness of the heart, we find our true home."
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Form submission
+        document.getElementById('retreatForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send this to a backend
+            // For now, show a confirmation message
+            alert('Thank you for your application!\n\nWe have received your retreat registration. Confirmation requests will be sent to your Prefect and Zonal Coordinator.\n\nYou will receive an email once your application is approved.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
